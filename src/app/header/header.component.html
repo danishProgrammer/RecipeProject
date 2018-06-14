@@ -1,12 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="conatiner-fluid">
      <div class="navbar-header">
-        <a href="" class="navbar-brand">Recipe</a>
+        <a href="" class="navbar-brand">{{headerHeading}}</a>
      </div>
      <ul class="nav navbar-nav">
-        <li><a href="#" class="active">Recipe</a></li>
-        <li><a href="#">Shopping List</a></li>
-        <li><a href="#" class="pull-right">Manage</a></li>
+        <li *ngFor = "let list of headerList"><a href="#">{{list}}</a></li>
       </ul>
   </div>
 </nav>
