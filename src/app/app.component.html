@@ -1,8 +1,11 @@
- <app-header></app-header>
+ <app-header (headerSelected) = "navigatePath($event)"></app-header>
    <div class="container">
        <div class="col-md-12">
-        <app-recipe></app-recipe>
-        <app-shopping-list></app-shopping-list>
+        <app-recipe *ngIf = "elementType == 'Recipe'"></app-recipe>
+        <app-shopping-list  *ngIf = "elementType == 'Shopping'"></app-shopping-list>
     </div>
    </div>
+
+
+
 

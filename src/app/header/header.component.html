@@ -4,7 +4,8 @@
         <a href="" class="navbar-brand">{{headerHeading}}</a>
      </div>
      <ul class="nav navbar-nav">
-        <li *ngFor = "let list of headerList"><a href="#">{{list}}</a></li>
+        <li><a href="#" (click) = 'navigatePath("Recipe")'>Recipe</a></li>
+        <li><a href="#" (click) = 'navigatePath("Shopping")'>Shopping List</a></li>
       </ul>
   </div>
 </nav>

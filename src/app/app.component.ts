@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '';
+  elementType : string;
+
+ navigatePath (selectedFeature : string){
+   if(selectedFeature == 'Recipe')
+    this.elementType = selectedFeature;
+    else
+    this.elementType = selectedFeature;
+ }
+
 }

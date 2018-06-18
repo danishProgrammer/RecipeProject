@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   headerHeading = 'Recipe';
-  headerList = ['Recipe','ShoppingList'];  
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() { }
+  ngOnInit() {}
+
+  @Output() headerSelected = new EventEmitter<string>();
+  
+  
+  navigatePath (headerName : string){ 
+      this.headerSelected.emit(headerName);
+    }
 
 }
