@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   headerHeading = 'Recipe';
-
+  activeElement = '';
   constructor() { }
   ngOnInit() {}
 
@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   
   
   navigatePath (headerName : string){ 
+    this.activeElement = headerName;
       this.headerSelected.emit(headerName);
     }
 

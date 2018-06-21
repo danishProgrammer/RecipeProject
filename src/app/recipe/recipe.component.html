@@ -5,8 +5,9 @@
     </div>
     <div class="col-md-7">
       <app-recipe-detail *ngIf= "recipe; else infoText" [recipeDetail] = "recipe"></app-recipe-detail>
-      <ng-template #infoText>
+      <ng-template  #infoText>
           Please Select the Recipe
       </ng-template>
+      <!-- <p appHighlightDirective>Lovely Recipe</p> -->
     </div>
 </div>
