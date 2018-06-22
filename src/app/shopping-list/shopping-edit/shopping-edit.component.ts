@@ -32,6 +32,12 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.shoppingListService.selectIngredeint.subscribe(
+      (ingredient : Ingredient) => {
+        this.ingredientName.nativeElement.value = ingredient.name;
+          this.ingredientAmount.nativeElement.value = ingredient.amount;
+      }
+    )
   }
 
 }

@@ -3,7 +3,8 @@ import { EventEmitter, Output } from "@angular/core";
 
 export class ShoppingListService {
   ingredientsChanged = new EventEmitter<Ingredient[]>();
-private  ingredeints : Ingredient[] = [
+  selectIngredeint = new EventEmitter<Ingredient>();
+  private  ingredeints : Ingredient[] = [
     new Ingredient('Bread',5),
     new Ingredient('Apple',8)
   ];
@@ -12,7 +13,7 @@ private  ingredeints : Ingredient[] = [
       this.ingredeints.push(ingredeint);
       this.ingredientsChanged.emit(this.ingredeints.slice());
   }
-  getIngredient(){
+  getIngredients(){
     return this.ingredeints.slice();
   }
 
@@ -20,5 +21,12 @@ private  ingredeints : Ingredient[] = [
     this.ingredeints = this.ingredeints.concat(ingredeintsArray);
   }
 
-  constructor() { }
+  deleteIngredeint(index){
+    this.ingredeints.splice(index);
+  }
+  selectIngredient(ingredeint : Ingredient){
+      this.selectIngredeint.emit(ingredeint)
+  }
+
+  constructor() {}
 }
