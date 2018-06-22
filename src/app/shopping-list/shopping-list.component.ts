@@ -21,8 +21,8 @@ export class ShoppingListComponent implements OnInit {
     )
   }
 
-  selectItem(ingredeint : Ingredient ){
-    this.shoppingListService.selectIngredient(ingredeint);
+  selectItem(ingredeint : Ingredient,index){
+    this.shoppingListService.selectIngredient(ingredeint,index);
   } 
 
 }

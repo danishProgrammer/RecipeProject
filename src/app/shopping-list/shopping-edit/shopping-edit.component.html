@@ -15,7 +15,7 @@
           <div class="col-xs-12">
             <p *ngIf = "errorMsg">{{errorMsg}}</p>
             <button class="btn btn-success margin" type="button" (click) = "AddIngredient()" >Add</button>
-            <button class="btn btn-danger margin" type="button" >Delete</button>
+            <button class="btn btn-danger margin" type="button" (click) = "DeleteIngredient()">Delete</button>
             <button class="btn btn-primary margin" type="button" (click) = "ClearInredient()">Clear</button>
           </div>
         </div>

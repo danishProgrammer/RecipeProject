@@ -30,6 +30,10 @@ export class ShoppingEditComponent implements OnInit {
     this.ingredientName.nativeElement.value = '';
     this.ingredientAmount.nativeElement.value = '';
   }
+  DeleteIngredient(){
+    this.ClearInredient();
+    this.shoppingListService.deleteIngredient();    
+  }
 
   ngOnInit() {
     this.shoppingListService.selectIngredeint.subscribe(
