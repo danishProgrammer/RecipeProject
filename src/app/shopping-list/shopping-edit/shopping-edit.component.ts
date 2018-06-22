@@ -11,13 +11,26 @@ export class ShoppingEditComponent implements OnInit {
 
  @ViewChild('ingredientName') ingredientName : ElementRef;
  @ViewChild('ingredientAmount') ingredientAmount : ElementRef; 
+ errorMsg : string;
 
  @Output() Ingredient = new EventEmitter<Ingredient>(); 
   constructor() { }
 
   AddIngredient(){
-      const ingredeint = new Ingredient(this.ingredientName.nativeElement.value,this.ingredientAmount.nativeElement.value);
-      this.Ingredient.emit(ingredeint);
+      if(this.ingredientName.nativeElement.value == '' || this.ingredientAmount.nativeElement.value == ''){
+          this.errorMsg = "Please Add Ingredeints Information"
+      }
+      else{
+        this.errorMsg = undefined;
+        const ingredeint = new Ingredient(this.ingredientName.nativeElement.value,this.ingredientAmount.nativeElement.value);
+        this.Ingredient.emit(ingredeint);
+      }
+     
+     
+  }
+  ClearInredient(){
+    this.ingredientName.nativeElement.value = '';
+    this.ingredientAmount.nativeElement.value = '';
   }
 
   ngOnInit() {

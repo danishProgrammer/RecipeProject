@@ -7,5 +7,16 @@
         <li [ngClass] = "{active : activeElement == 'Recipe'}"><a href="#" (click) = 'navigatePath("Recipe")'>Recipe</a></li>
         <li [ngClass]="{active : activeElement != 'Recipe'}"><a href="#" (click) = 'navigatePath("Shopping")'>Shopping List</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" appDropdown>
+          <a  role="button" class="dropdown-toggle">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a >Save Data</a>
+              <a >Fetch Data</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
   </div>
 </nav>

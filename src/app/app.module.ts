@@ -10,6 +10,7 @@ import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component'
 import { RecipeItemComponent } from './recipe/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { HighlightDirective } from './shared/highlight-directive.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HighlightDirective } from './shared/highlight-directive.directive';
     RecipeListComponent,
     RecipeItemComponent,
     ShoppingEditComponent,
-    HighlightDirective
+    HighlightDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule
