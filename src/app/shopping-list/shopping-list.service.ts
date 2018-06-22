@@ -16,5 +16,9 @@ private  ingredeints : Ingredient[] = [
     return this.ingredeints.slice();
   }
 
+  mergeIngredeints(ingredeintsArray : Ingredient[]){
+    this.ingredeints = this.ingredeints.concat(ingredeintsArray);
+  }
+
   constructor() { }
 }
