@@ -31,8 +31,14 @@ export class ShoppingEditComponent implements OnInit {
     this.ingredientAmount.nativeElement.value = '';
   }
   DeleteIngredient(){
+    if(this.ingredientName.nativeElement.value == '' || this.ingredientAmount.nativeElement.value == ''){
+      this.errorMsg = "Please Select Ingredeint"
+  }
+  else
+  {
     this.ClearInredient();
     this.shoppingListService.deleteIngredient();    
+  }
   }
 
   ngOnInit() {
