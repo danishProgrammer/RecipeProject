@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default">
   <div class="conatiner-fluid">
      <div class="navbar-header">
-        <a href="" class="navbar-brand">{{headerHeading}}</a>
+        <a class="navbar-brand">{{headerHeading}}</a>
      </div>
      <ul class="nav navbar-nav">
-        <li [ngClass] = "{active : activeElement == 'Recipe'}"><a href="#" (click) = 'navigatePath("Recipe")'>Recipe</a></li>
-        <li [ngClass]="{active : activeElement != 'Recipe'}"><a href="#" (click) = 'navigatePath("Shopping")'>Shopping List</a></li>
+        <li routerLinkActive = "active"><a routerLink = "/recipes">Recipe</a></li>
+        <li routerLinkActive = "active"><a routerLink = "/shoppingList">Shopping List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>

@@ -22,5 +22,8 @@ export class RecipeService {
   getRecipe(){  
    return this.recipes.slice();
   }
+  getSingRecipe(id:number){
+    return this.recipes[id];
+  }
   constructor() { }
 }
