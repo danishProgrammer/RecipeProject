@@ -2,7 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { Ingredient } from '../../shared/Ingredient.model';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
-import { ActivatedRoute,Params } from "@angular/router";
+import { ActivatedRoute,Params, Router } from "@angular/router";
 import { RecipeService } from "src/app/recipe/recipe.service";
 
 
@@ -18,7 +18,8 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(private shoppingListService : ShoppingListService,
     private recipeService : RecipeService ,
-    private activeRoute : ActivatedRoute) {}
+    private activeRoute : ActivatedRoute,
+  private router : Router) {}
 
 
   ingToShoppingList(ingredients : Ingredient[]){
@@ -32,6 +33,10 @@ export class RecipeDetailComponent implements OnInit {
          this.recipeDetail = this.recipeService.getSingRecipe(this.id);
       }
     )
+    // this.id = this.activeRoute.snapshot.params['id'];
+  }
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo : this.activeRoute});
   }
 
 }
